@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MazeRunner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <h2>MazeRunner</h2>
+            <p>Your C code running in the browser with WebAssembly.</p>
+            
+            <div class="control-group">
+                <label for="size-slider">Maze Size: <span id="size-value">21</span></label>
+                <input type="range" id="size-slider" min="11" max="101" value="21" step="2">
+            </div>
+
+            <button id="btn-generate">Generate Maze</button>
+            
+            <div class="control-group" id="solve-controls" style="display: none;">
+                <label>Solver Algorithm</label>
+                <div class="radio-group">
+                    <input type="radio" id="solver-bfs" name="solver" value="1" checked>
+                    <label for="solver-bfs">BFS (Shortest Path)</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="solver-dfs" name="solver" value="2">
+                    <label for="solver-dfs">DFS (Any Path)</label>
+                </div>
+                <button id="btn-solve">Solve Maze</button>
+            </div>
+            
+            <p class="status" id="status-text"></p>
+        </div>
+        
+        <div class="maze-display">
+            <canvas id="maze-canvas"></canvas>
+        </div>
+    </div>
+
+    <script src="maze.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
